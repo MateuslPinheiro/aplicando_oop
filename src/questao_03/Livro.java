@@ -3,21 +3,20 @@ package questao_03;
 public class Livro {
     //Atributos
     private String nome, editora;
+    private Boolean statusAlugado;
     private int codigo;
-    private static int numLivros = 50;
+    private Usuario userAluguel;
 
     //Métodos públicos
-
     public Livro(String nome, String editora, int codigo) {
         this.nome = nome;
         this.editora = editora;
         this.codigo = codigo;
+        this.statusAlugado = false;
+        this.userAluguel = null;
     }
 
-
     //Métodos especiais
-
-
     public String getNome() {
         return nome;
     }
@@ -42,12 +41,20 @@ public class Livro {
         this.codigo = codigo;
     }
 
-    public static int getNumLivros() {
-        return numLivros;
+    public Boolean getStatusAlugado() {
+        return statusAlugado;
     }
 
-    public static void setNumLivros(int numLivros) {
-        Livro.numLivros = numLivros;
+    public void setStatusAlugado(Boolean statusAlugado) {
+        this.statusAlugado = statusAlugado;
+    }
+
+    public Usuario getUserAluguel() {
+        return userAluguel;
+    }
+
+    public void setUserAluguel(Usuario userAluguel) {
+        this.userAluguel = userAluguel;
     }
 
     @Override
@@ -55,7 +62,8 @@ public class Livro {
         return "Livro{" +
                 "nome='" + nome + '\'' +
                 ", editora='" + editora + '\'' +
-                ", codigo='" + codigo + '\'' +
+                ", statusAlugado=" + statusAlugado +
+                ", codigo=" + codigo +
                 '}';
     }
 }

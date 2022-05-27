@@ -7,7 +7,8 @@ public class Monitor extends Usuario{
     }
 
     @Override
-    public String alugar(int dias) {
+    public String alugar(Livro livro, int dias) {
+        this.livrosAlugados.add(livro);
         if (dias<30){
             return "Livro devolvido no prazo";
         } else if (dias==31) {

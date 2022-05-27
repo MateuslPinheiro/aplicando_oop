@@ -3,7 +3,7 @@ package questao_03;
 import java.util.ArrayList;
 
 public class Biblioteca {
-    private ArrayList<Livro> livros;
+    public ArrayList<Livro> livros;
 
     public Biblioteca(){
         this.livros = new ArrayList<Livro>();
@@ -17,5 +17,12 @@ public class Biblioteca {
         for (i=0;i<this.livros.size();i++){
             System.out.println(this.livros.get(i));
         }
+        System.out.println("\n");
+    }
+
+    public void alugarLivro(Usuario user, Livro liv, int dias) {
+        liv.setStatusAlugado(true);
+        user.alugar(liv, dias);
+//        liv.setUserAluguel(user);
     }
 }

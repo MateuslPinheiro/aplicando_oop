@@ -1,9 +1,12 @@
 package questao_03;
 
+import java.util.ArrayList;
+
 public class Usuario {
     //Atributos
     protected String nome, CPF;
     protected int matricula;
+    protected ArrayList<Livro> livrosAlugados = new ArrayList<Livro>();
 
     //Métodos públicos
 
@@ -13,7 +16,8 @@ public class Usuario {
         this.matricula = matricula;
     }
 
-    public String alugar(int dias){
+    public String alugar(Livro livro, int dias){
+        this.livrosAlugados.add(livro);
         if (dias<15){
             return "Livro devolvido no prazo";
         } else if (dias==16) {
@@ -49,13 +53,13 @@ public class Usuario {
         this.matricula = matricula;
     }
 
-
     @Override
     public String toString() {
         return "Usuario{" +
                 "nome='" + nome + '\'' +
                 ", CPF='" + CPF + '\'' +
                 ", matricula=" + matricula +
+                ", livrosAlugados=" + livrosAlugados +
                 '}';
     }
 }

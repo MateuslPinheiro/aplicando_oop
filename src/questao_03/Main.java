@@ -2,23 +2,23 @@ package questao_03;
 
 public class Main {
     public static void main(String[] args) {
-        Livro a = new Livro("Aprendendo Poo", "Aprender", 2345678);
-        Livro b = new Livro("Redes de computadores", "Saber", 23451);
+        Usuario u1 = new Usuario("Mateus", "298.885.339-21", 123456);
+        Monitor u2 = new Monitor("Hill", "512.321.893-77", 654321);
+
+        Livro l1 = new Livro("Aprendendo Poo", "Aprender", 2345678);
+        Livro l2 = new Livro("Redes de computadores", "Saber", 23451);
 
         Biblioteca bib = new Biblioteca();
-        bib.cadastrarLivros(a);
-        bib.cadastrarLivros(b);
 
-        /*System.out.println(a);
-        System.out.println(b);*/
+
+        bib.cadastrarLivros(l1);
+        bib.cadastrarLivros(l2);
         bib.listarLivros();
 
-        Usuario c = new Usuario("Mateus", "298.885.339-21", 123456);
-        Monitor d = new Monitor("Hill", "512.321.893-77", 654321);
-        System.out.println(c.alugar(40));
-        System.out.println(d.alugar(40));
-        System.out.println(c);
-        System.out.println(d);
+        bib.alugarLivro(u1, l1, 40);
+        bib.alugarLivro(u2, l2,40);
+        bib.listarLivros();
 
+        System.out.println(u1);
     }
 }
